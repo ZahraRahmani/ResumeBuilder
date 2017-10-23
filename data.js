@@ -11,7 +11,8 @@
             getSummary: getSummary,
             getSkills: getSkills,
             getExperience: getExperience,
-            getEducation: getEducation
+            getEducation: getEducation,
+            getaffiliation:getaffiliation
 
         }
         return service;
@@ -81,7 +82,16 @@
                     'Prepared electrical drawings']
             }
         }
+        
+        function getaffiliation(){
+            return [
+            'Certificates in Auto CAD, Electrical Auto CAD and Dialux programs, Hekmat Engineering Service Company, Kabul, Afghanistan, 2013',
+            'Certificate in Afghanistan Energy Capacity Building Program (AECBP), USAID, Kabul, Afghanistan, 2011'
 
+            ]
+                
+            
+        };
 
     }
 

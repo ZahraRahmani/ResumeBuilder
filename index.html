@@ -23,9 +23,9 @@
             <div class="col-md-6">
                 <h1><strong>{{summary.name}}</strong></h1>
                 <h2><strong>{{summary.title}}</strong></h2>
-                <h2><span class="glyphicon glyphicon-home">{{summary.location}}</span>&nbsp;</h2>
-                <h2><span class="glyphicon glyphicon-phone-alt">{{summary.phone}}</span>&nbsp;</h2>
-                <h2><span class="glyphicon glyphicon-envelope">{{summary.email}}</span>&nbsp;</h2>
+                <h2><span class="glyphicon glyphicon-home"></span>&nbsp;{{summary.location}}</h2>
+                <h2><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;{{summary.phone}}</h2>
+                <h2><span class="glyphicon glyphicon-envelope"></span>&nbsp;{{summary.email}}</h2>
                 <h2>{{summary.information}}</h2>
                 <div style="font-size: 20px;">
                 <a href="https://www.facebook.com/ghulamsahki.fekrat"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
@@ -125,8 +125,10 @@
            <div id="affiliation" class="tab-pane fade">
             
              <ul>
-                 <li>Certificates in Auto CAD, Electrical Auto CAD and Dialux programs, Hekmat Engineering Service Company, Kabul, Afghanistan, 2013</li>
-                 <li>Certificate in Afghanistan Energy Capacity Building Program (AECBP), USAID, Kabul, Afghanistan, 2011</li>
+                 <li ng-repeat="affi in affiliation">
+                     {{affi}}
+                 </li>
+                 
              </ul>
            </div>
        

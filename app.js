@@ -10,7 +10,8 @@
         $scope.skills=MyService.getSkills();
         $scope.experience=MyService.getExperience();
         $scope.education=MyService.getEducation();
-        console.log($scope.experience);
+        $scope.affiliation=MyService.getaffiliation();
+
       
 
     }
