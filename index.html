@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="style.css">
 </head>
 <body ng-controller="MyCtrl">
@@ -51,7 +51,7 @@
        
              <!-- Professional Summary -->
        
-             <div id="professionalSummary" class="tab-pane fade in active">      <h3>Professional Summary</h3>
+             <div id="professionalSummary" class="tab-pane fade in active"> <h3>Professional Summary</h3>
              
                  
            </div>
@@ -64,7 +64,9 @@
            <div id="skills" class="tab-pane fade">
              <h3>Skills</h3>
              <ul >
-                 <li ng-repeat="skill in skills"></li>
+                 <li ng-repeat="skill in skills">
+                     {{skill}}
+                 </li>
              </ul>
            </div>
        

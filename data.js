@@ -24,7 +24,8 @@
             location:'2866 Gooding St., Boise, Idaho 83702',
             phone:'(208) 570-0532',
             email:'fekrat.sakhi@gmail.com',
-            information:'Fully Work Authorized. No Visa Sponsorship Required'
+            information:'Fully Work Authorized. No Visa Sponsorship Required',
+            summary:'Electrical Engineering professional with 5+ years of experience designing transmission lines and working as an electrical site engineer for a U.S.-based construction company designing and constructing the U.S. Embassy in Kabul, Afghanistan'
         }
     }
 
