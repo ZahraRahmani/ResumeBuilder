@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="style.css">
 </head>
 <body ng-controller="MyCtrl">
 
@@ -17,12 +18,12 @@
                 <img alt="profile" class="img-responsive img-circle" id="profile" />
             </div>
             <div class="col-md-6">
-                <h1 id="name"><strong></strong></h1>
-                <h2 id="title"><strong></strong></h2>
-                <h2 id="location"><span class="glyphicon glyphicon-home"></span>&nbsp;</h2>
-                <h2 id="phone"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;</h2>
-                <h2 id="email"><span class="glyphicon glyphicon-envelope"></span>&nbsp;</h2>
-                <h2 id="information"></h2>
+                <h1><strong>{{summary.name}}</strong></h1>
+                <h2><strong>{{summary.title}}</strong></h2>
+                <h2><span class="glyphicon glyphicon-home">{{summary.location}}</span>&nbsp;</h2>
+                <h2><span class="glyphicon glyphicon-phone-alt">{{summary.phone}}</span>&nbsp;</h2>
+                <h2><span class="glyphicon glyphicon-envelope">{{summary.email}}</span>&nbsp;</h2>
+                <h2>{{summary.information}}</h2>
                 <div style="font-size: 20px;">
                 <a href="https://www.facebook.com/ghulamsahki.fekrat"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
                 <a href="https://www.linkedin.com/in/ghulam-sakhi-fikrat-0b223613b/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
@@ -34,6 +35,116 @@
     </div>
     </div>
     <!-- Summary -->
+
+    <!-- navbar -->
+<div class="container" id="navbar">
+        <ul class="nav nav-tabs ">
+           <li class="active"><a data-toggle="tab" href="#professionalSummary">Professional Summary</a></li>
+           <li><a data-toggle="tab" href="#skills">Key Skills</a></li>
+           <li><a data-toggle="tab" href="#experience">Professional Experiences</a></li>
+           <li><a data-toggle="tab" href="#education">Education</a></li>
+           <li><a data-toggle="tab" href="#affiliation">Affiliation</a></li>
+       
+         </ul>
+       
+         <div class="tab-content" id="tab-content">
+       
+             <!-- Professional Summary -->
+       
+             <div id="professionalSummary" class="tab-pane fade in active">      <h3>Professional Summary</h3>
+             
+                 
+           </div>
+       
+             <!-- Professional Summary -->
+       
+       
+           <!-- skills -->
+       
+           <div id="skills" class="tab-pane fade">
+             <h3>Skills</h3>
+             <ul >
+                 <li ng-repeat="skill in skills"></li>
+             </ul>
+           </div>
+       
+           <!-- skills -->
+       
+           <!-- Experience -->
+       
+           <div id="experience" class="tab-pane fade">
+             <h3><strong>Expereince</strong></h3>
+             <!-- Entry -->
+             <div class="entry">
+             <div class="row">
+               <div class="col-md-8">
+               <h3 class="h3"><strong></strong></h3>
+               <h3 class="h3"></h3>
+               </div>
+             <div class="col-md-2 pull-right">
+                 <h4></h4>
+             </div>
+            </div>
+             <h3></h3>
+             <ul>
+       
+             </ul>
+         </div>
+             <!-- Entry -->
+             
+       
+             <!-- Entry -->
+             <div class="entry">
+             <h3><strong>Electrical Engineer, Afghanistan Investment Support Agency (AISA), Industrial Park Development Department (IPDD)</strong></h3>
+             <div class="row">
+                 <div class="col-md-8">
+             <h3></h3>
+             </div>
+             <div class="col-md-2 pull-right">
+                 <h4></h4>
+             </div>
+             </div>
+             
+             <h3> AISA was created to support private sector development in Afghanistan; responsible for development and management of new,modern industrial parks and provided licenses to investors</h3>
+             <ul>
+                 <li>Surveyed and designed transmission lines for industrial parks</li>
+                 <li>Prepared electrical drawings</li>
+             </ul>
+         </div>
+           <!-- Entry -->
+       
+           </div>
+       
+           <!-- Experience -->
+           
+       
+           <!-- Education -->
+       
+           <div id="education" class="tab-pane fade ">
+             <h3>Education</h3>
+              <h3><strong>Bachelor of Science (BS), Power Supply Engineering, Kabul Polytechnic University,</strong></h3>
+              <h3>Kabul, Afghanistan Graduated 2013</h3>
+              <h2>Leading educational institution for Engineering in Afghanistan; Accredited by the Ministry of Higher Education</h2>
+           </div>
+       
+           <!-- Education -->
+       
+       
+       <!-- Affiliation -->
+           <div id="affiliation" class="tab-pane fade">
+            
+             <ul>
+                 <li>Certificates in Auto CAD, Electrical Auto CAD and Dialux programs, Hekmat Engineering Service Company, Kabul, Afghanistan, 2013</li>
+                 <li>Certificate in Afghanistan Energy Capacity Building Program (AECBP), USAID, Kabul, Afghanistan, 2011</li>
+             </ul>
+           </div>
+       
+       <!-- Affiliation -->
+       
+         </div>
+       </div>
+       
+           <!-- navbar -->
   
     
 

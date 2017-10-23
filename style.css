@@ -1,0 +1,46 @@
+body{
+	font-family: 'Roboto';
+
+}
+
+.body{
+	margin-top: 50px;
+	margin-bottom: 60px;
+	 box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*-- Summary --*/
+.summary img{
+width: 250px;
+height: 220px;
+}
+.summary h1{
+font-size: 1.8em;
+}
+.summary h2{
+	font-size: 1.4em;
+}
+.summary .row{
+	margin-top: 40px;
+}
+
+/*-- Summary --*/
+
+
+/*-- navbar --*/
+.h3{
+	display: inline;
+}
+ .nav-tabs{
+ 	margin-top: 50px;
+ }
+ .tab-content{
+ 	margin-bottom: 60px;
+
+ }
+ .h3{
+ 	display: inline;
+ }
+ #affiliation{
+ 	margin-top: 30px;
+ }
+/*-- navbar --*/
