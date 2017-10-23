@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-controller="MyCtrl">
-
+        <div class="container body" id="body">
+                
     
 <!-- Summary -->
 <div class="container summary" id="summary">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
-                <img alt="profile" class="img-responsive img-circle" id="profile" />
+                <img  src="{{summary.profile}}" alt="profile" class="img-responsive img-circle" />
             </div>
             <div class="col-md-6">
                 <h1><strong>{{summary.name}}</strong></h1>
@@ -51,8 +52,9 @@
        
              <!-- Professional Summary -->
        
-             <div id="professionalSummary" class="tab-pane fade in active"> <h3>Professional Summary</h3>
-             
+             <div id="professionalSummary" class="tab-pane fade in active"> 
+                 <h3>Professional Summary</h3>
+                 <p>{{summary.summaryone}}</p>
                  
            </div>
        
@@ -76,41 +78,22 @@
        
            <div id="experience" class="tab-pane fade">
              <h3><strong>Expereince</strong></h3>
+           
+       
              <!-- Entry -->
-             <div class="entry">
-             <div class="row">
-               <div class="col-md-8">
-               <h3 class="h3"><strong></strong></h3>
-               <h3 class="h3"></h3>
-               </div>
-             <div class="col-md-2 pull-right">
-                 <h4></h4>
-             </div>
+             <div class="entry" ng-repeat="exp in experience">
+             <h3><strong>{{exp.title}}</strong></h3>
+             
+            
+            
+             <div class="pull-right">
+                 <h4>Start: {{exp.startYear}} End: {{exp.endYear}}</h4>
             </div>
-             <h3></h3>
-             <ul>
-       
-             </ul>
-         </div>
-             <!-- Entry -->
              
-       
-             <!-- Entry -->
-             <div class="entry">
-             <h3><strong>Electrical Engineer, Afghanistan Investment Support Agency (AISA), Industrial Park Development Department (IPDD)</strong></h3>
-             <div class="row">
-                 <div class="col-md-8">
-             <h3></h3>
-             </div>
-             <div class="col-md-2 pull-right">
-                 <h4></h4>
-             </div>
-             </div>
-             
-             <h3> AISA was created to support private sector development in Afghanistan; responsible for development and management of new,modern industrial parks and provided licenses to investors</h3>
+             <h3>{{exp.organization}} </h3>
              <ul>
-                 <li>Surveyed and designed transmission lines for industrial parks</li>
-                 <li>Prepared electrical drawings</li>
+                 <li ng-repeat="item in exp.descriptions">{{item}}</li>
+          
              </ul>
          </div>
            <!-- Entry -->
@@ -124,9 +107,13 @@
        
            <div id="education" class="tab-pane fade ">
              <h3>Education</h3>
-              <h3><strong>Bachelor of Science (BS), Power Supply Engineering, Kabul Polytechnic University,</strong></h3>
-              <h3>Kabul, Afghanistan Graduated 2013</h3>
-              <h2>Leading educational institution for Engineering in Afghanistan; Accredited by the Ministry of Higher Education</h2>
+              <h3><strong>{{education.title}}</strong></h3>
+              <h3>{{education.location1}}</h3>
+              <h2>{{education.organization}}</h2>
+              <h4 class="pull-right">Start: {{education.startYear}} End: {{education.endYear}}</h4>
+              <ul>             
+                <li ng-repeat="edu in education.descriptions">{{edu}}</li>
+            </ul>
            </div>
        
            <!-- Education -->
@@ -155,6 +142,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
     <script src="data.js"></script>
-
+        </div>
 </body>
 </html>
