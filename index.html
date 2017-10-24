@@ -18,7 +18,7 @@
 <div class="container summary" id="summary">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
-                <img  src="{{summary.profile}}" alt="profile" class="img-responsive img-circle" />
+                <img  src="{{summary.profile}}" alt="profile" class="img-responsive img-circle" id="profile"/>
             </div>
             <div class="col-md-6">
                 <h1><strong>{{summary.name}}</strong></h1>
@@ -107,14 +107,14 @@
        
            <!-- Education -->
        
-           <div id="education" class="tab-pane fade ">
+           <div id="education" class="tab-pane fade " ng-repeat="educate in education">
              <h3>Education</h3>
-              <h3><strong>{{education.title}}</strong></h3>
-              <h3>{{education.location1}}</h3>
-              <h2>{{education.organization}}</h2>
-              <h4 class="pull-right">Start: {{education.startYear}} End: {{education.endYear}}</h4>
+              <h3><strong>{{educate.title}}</strong></h3>
+              <h3>{{educate.location1}}</h3>
+              <h3>{{educate.organization}}</h3>
+              <h4 class="pull-right">Start: {{educate.startYear}} End: {{educate.endYear}}</h4>
               <ul>             
-                <li ng-repeat="edu in education.descriptions">{{edu}}</li>
+                <li ng-repeat="edu in educate.descriptions">{{edu}}</li>
             </ul>
            </div>
        
@@ -123,7 +123,7 @@
        
        <!-- Affiliation -->
            <div id="affiliation" class="tab-pane fade">
-            
+            <h3>Affiliation</h3>
              <ul>
                  <li ng-repeat="affi in affiliation">
                      {{affi}}

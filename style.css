@@ -6,7 +6,7 @@ body{
 .body{
 	margin-top: 50px;
 	margin-bottom: 60px;
-	 box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*-- Summary --*/
 .summary img{
@@ -37,9 +37,7 @@ font-size: 1.8em;
  	margin-bottom: 60px;
 
  }
- .h3{
- 	display: inline;
- }
+
  #affiliation{
  	margin-top: 30px;
  }

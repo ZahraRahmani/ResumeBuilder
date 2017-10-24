@@ -72,7 +72,7 @@
         };
 
         function getEducation() {
-            return {
+            return [{
                 title: 'Electrical Engineer, Afghanistan Investment Support Agency (AISA), Industrial Park Development Department (IPDD)',
                 location1: 'Kabul, Afghanistan',
                 organization: 'AISA was created to support private sector development in Afghanistan; responsible for development and management of new,modern industrial parks and provided licenses to investors',
@@ -80,7 +80,7 @@
                 endYear: ' 03/2012',
                 descriptions: ['Surveyed and designed transmission lines for industrial parks',
                     'Prepared electrical drawings']
-            }
+            }]
         }
         
         function getaffiliation(){
