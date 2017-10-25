@@ -1,65 +1,266 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.6.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.6.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <div class="container body" id="body">             
+<body ng-controller="ResumeCtrl">
+
+<!-- Summary -->
+<div class="container summary" id="summary">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <img  src="{{summary.profile}}" alt="profile" class="img-responsive img-circle" id="profile"/>
+            </div>
+
+            <!-- View Summary -->
+            <div class="col-md-6" ng-hide="showSummaryForm">
+                <h1><strong>{{summary.name}}</strong></h1><button type="button" class="btn btn-primary pull-right" ng-click = "editSummary()">Edit</button>
+                <h2><strong>{{summary.title}}</strong></h2>
+                <h2><span class="glyphicon glyphicon-home"></span>&nbsp;{{summary.location}}</h2>
+                <h2><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;{{summary.phone}}</h2>
+                <h2><span class="glyphicon glyphicon-envelope"></span>&nbsp;{{summary.email}}</h2>
+                <h2>{{summary.information}}</h2>
+                <div style="font-size: 20px;">
+                <a href="https://www.facebook.com/ghulamsahki.fekrat"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/ghulam-sakhi-fikrat-0b223613b/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            
+            </div>
+        </div>
+         <!-- /View Summary -->
+
+         <!-- Edit Summary -->
+        <div class="col-md-6" ng-show="showSummaryForm">
+            <form ng-submit="saveSummary()">
+                <button type="button" class="btn btn-success pull-right" ng-click="saveSummary()">Save</button>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="summary.name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="summary.title">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="summary.location">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="summary.phone">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Name" ng-model="summary.email">
+                  </div>
+                </form>
+              </div>    
+              <!-- /Edit Summary -->
+
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- Summary -->
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <!-- navbar -->
+<div class="container" id="navbar">
+        <ul class="nav nav-tabs ">
+           <li class="active"><a data-toggle="tab" href="#professionalSummary">Professional Summary</a></li>
+           <li><a data-toggle="tab" href="#skills">Key Skills</a></li>
+           <li><a data-toggle="tab" href="#experience">Professional Experiences</a></li>
+           <li><a data-toggle="tab" href="#education">Education</a></li>
+           <li><a data-toggle="tab" href="#affiliation">Affiliation</a></li>
+       
+         </ul>
+       
+         <div class="tab-content" id="tab-content">
+       
+             <!-- view Professional Summary -->
+       
+             <div id="professionalSummary" class="tab-pane fade in active" ng-hide="showSummaryForm"> 
+                 <h3>Professional Summary</h3>
+                 <button type="button" class="btn btn-primary pull-right" ng-click="editSummary()">Edit</button>
+                 <p>{{summary.summaryone}}</p>
+                 
+           </div>
+       
+             <!-- view Professional Summary -->
+
+             <!-- edit professional summary -->
+            <div id="proffessionalSummay" class="tab-pane fade in active" ng-show="showSummaryForm">
+                <form ng-submit="saveSummary()">
+                    <button type="button" class="btn btn-success pull-right" ng-click="saveSummary()">Save</button>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Info" ng-model="summary.summaryone">
+                    </div>
+                </form>
+            </div>
+
+             <!-- edit professional summary -->
+
+      
+          
+           <!-- Skills -->
+         
+           <div id="skills" class="tab-pane fade" >
+                <!-- View Skills -->
+             <h3>Skills</h3>
+             <div ng-hide="showSkillsForm">
+             <button type="button" class="btn btn-primary pull-right" ng-click = "editSkills()">Edit</button>
+             <ul >
+                 <li ng-repeat="skill in skills">
+                     {{skill.skill}}
+                 </li>
+             </ul>
+            </div>
+            <!-- View Skills -->
+
+            <!-- Edit Skills -->
+           <div  ng-show="showSkillsForm">
+                <form ng-submit="saveSkills()">
+                    <button type="button" class="btn btn-success pull-right" ng-click="saveSkills()">Save</button>
+                    <div class="form-group" ng-repeat="skill in skills">
+                            <input type="text" class="form-control" ng-model="skill.skill">
+                       </div>
+                          </form>
+                          </div>
+                    
+           </div>
+       
+            <!-- Edit Skills -->
+       
+
+           <!-- Experience -->
+       
+           <div id="experience" class="tab-pane fade" >
+             <h3><strong>Expereince</strong></h3>
+             
+             <!-- Entry view-->
+             <div ng-hide="showExperienceForm">
+                 <button type="button" class="btn btn-primary pull-right" ng-click="editExperience()">Edit</button>
+             <div class="entry" ng-repeat="exp in experience">
+                <h3><strong>{{exp.title}}</strong></h3>
+                
+               
+               
+                <div class="pull-right">
+                    <h4>Start: {{exp.startYear}} End: {{exp.endYear}}</h4>
+               </div>
+                
+                <h3>{{exp.organization}} </h3>
+
+                 <!-- view descriptions  -->
+                 <ul >
+                    <li ng-repeat="descript in exp.descriptions">
+                        {{descript.descript}}
+                    </li>
+                </ul>
+            </div>
+            </div>
+   
+          
+              <!-- Entry view-->
+             
+         
+      
+
+           <!-- Edit Entry -->
+           <div ng-show="showExperienceForm">
+               
+               <button type="button" class="btn btn-success pull-right" ng-click="saveExperience()">Save</button>
+            <form ng-submit="saveExperience()" ng-repeat="exp in experience">
+                <div class="form-group">
+                    <input type="text" class="form-control"  ng-model="exp.title">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"  ng-model="exp.startYear">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control"  ng-model="exp.endYear">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control"  ng-model="exp.organization">
+                  </div>
+                      
+                     <!-- Edit descriptions -->
+                     <div class="form-group" ng-repeat="descript in exp.descriptions">
+                        <input type="text" class="form-control" ng-model="descript.descript">
+                      </div>               
+                  </form>
+               
+             <!-- Edit Entry -->
+             </div>
+             </div>
+       
+           <!-- Experience -->
+           
+       
+           <!-- Education -->
+       
+           <div id="education" class="tab-pane fade " ng-repeat="educate in education">
+             <h3>Education</h3>
+              <h3><strong>{{educate.title}}</strong></h3>
+              <h3>{{educate.location1}}</h3>
+              <h3>{{educate.organization}}</h3>
+              <h4 class="pull-right">Start: {{educate.startYear}} End: {{educate.endYear}}</h4>
+              <ul>             
+                <li ng-repeat="edu in educate.descriptions">{{edu}}</li>
+            </ul>
+           </div>
+       
+           <!-- Education -->
+       
+       
+       <!-- Affiliation view -->
+           <div id="affiliation" class="tab-pane fade">
+            <h3>Affiliation</h3>
+            <div ng-hide="showaffiliationForm">
+                    <button type="button" class="btn btn-primary pull-right" ng-click = "editaffiliation()">Edit</button>
+                    <ul >
+                        <li ng-repeat="item in affiliation">
+                            {{item.affiliation}}
+                        </li>
+                    </ul>
+                   </div>
+                   <!-- edit affiliation -->
+                  <div  ng-show="showaffiliationForm">
+                       <form ng-submit="saveaffiliation()">
+                           <button type="button" class="btn btn-success pull-right" ng-click="saveaffiliation()">Save</button>
+                           <div class="form-group" ng-repeat="item in affiliation">
+                                   <input type="text" class="form-control" ng-model="item.affiliation">
+                              </div>
+                                 </form>
+                                 </div>
+                           
+                  </div>
+            
+       
+       <!-- Affiliation -->
+       
+       </div>
+       
+           <!-- navbar -->
+  
+        </div>
+           
+<!-- Angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/resume/resume.service.js"></script>
+    <script src="app/resume/resume.ctrl.js"></script>
+</body>
 </html>
